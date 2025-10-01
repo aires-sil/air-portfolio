@@ -1,4 +1,4 @@
-Note:This repo is a recreation of my original one as i forgot to remove some sensative info so this had to be recreated.
+Note:This repo is a recreation of my original one as i forgot to remove some sensitive info so this had to be recreated.
 1. Project Title
 
 Aires Portfolio – A personal portfolio showcasing projects, skills, and contact information.
