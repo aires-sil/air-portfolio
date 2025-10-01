@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Docker Project - Aires</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+   <!-- HEADER -->
+<header id="dynamic-header">
+    <h1>Aires</h1>
+    <p>Student | C# | Python | Docker | Blender | AI tinkerer | HTML | GitHub</p>
+</header>
+
+   
+
+<!-- Link your JS file at the bottom of body -->
+<script src="script.js"></script>
+
+
+   <!-- NAVIGATION -->
+   <nav>
+      <a href="index.html">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="index.html#projects">Back to Projects</a>
+   </nav>
+
+   <!-- PROJECT DETAILS SECTION -->
+   <section id="project-details">
+      <h2>Pi Server Home Lab</h2>
+
+      <!-- Warning -->  
+    <p><strong>Note:</strong> This project was developed with assistance from AI tools.
+       See the summary of services below. Any info that may harm security has been 
+       removed.</p>
+
+      
+    <p>
+        This server was developed with the assistance of Chat GPT to help write scripts and execute commands. 
+        Most of the setup was completed via SSH on a Windows 11 PC. I reviewed each script to understand its function, 
+        planned the server layout, and worked through any issues that arose. I chose the Raspberry Pi 5 8GB despite its high price due 
+        to its power efficiency and compact form factor. The most challenging part was getting the NVMe drive recognized by the OS and 
+        resolving compatibility issues with the NVMe setup.
+    </p>
+
+
+      <h3>Ai Summary -NotebookLM</h3>
+      <p>
+        The Pi Server Home Lab is an ongoing, power-efficient home server project built on a Raspberry Pi 5 8GB 
+        to host a variety of versatile services, utilizing a hardware stack costing approximately £134 to £145. 
+        The server infrastructure, running Raspberry Pi OS Lite 64bit, was strategically designed to maximize component 
+        longevity by operating the OS from a USB stick while dedicating the 256GB NVME SSD for logs, cache, and other data. 
+        Core services, mostly managed via Docker containers, include a Jellyfin media server, a Minecraft Bedrock server, 
+        and a Tiny Llama AI chat-bot, which was optimized using LLama.cpp for 4bit quantization to remain within strict RAM 
+        limits. Security and infrastructure management are handled through a Wireguard VPN for secure external access, Caddy 
+        as a reverse proxy ensuring HTTPS for services, and automated maintenance via Watchtower and custom scripts. The 
+        project involved extensive problem-solving over approximately 54 hours of setup, including integrating AI tools like 
+        Chat GPT to assist with coding and script execution.
+      </p>
+
+      <h3>Items Used</h3>
+      <!-- Add Links to products -->
+      <ul>
+        <li>Raspberry Pi 5 8GB (~£77)</li>
+        <li>Miuzei Raspberry Pi 5 Metal Case (~11.99)</li>
+        <li>Geekworm X1001 NVMe Shield (~£15)</li>
+        <li>Patriot P300 256GB NVMe (~£20)</li>
+        <li>SanDisk Ultra 32GB USB (2013) – owned</li>
+        <li>MSI GE65 Raider laptop – owned</li>
+      </ul>
+
+      <h3>Physical setup</h3>
+      <p>
+        Took ~1hr; had some trouble applying the thermal pads as they kept falling off. 
+        The case design meant the ribbon cable was upside down, so I used the NVMe standoffs 
+        to hold the drive inverted above the stand.
+      </p>
+
+
+      <h3 id="services">Services</h3>
+      <ul>
+        <li><a href="#jellyfin" style="text-decoration: none; color: inherit;">Jellyfin (Media server)</a></li>
+        <li><a href="#minecraft-bedrock-server" style="text-decoration: none; color: inherit;">Minecraft Bedrock Server</a></li>
+        <li><a href="#ai" style="text-decoration: none; color: inherit;">AI Chatbot (Docker + LLaMA.cpp)</a></li>
+        <li><a href="#heimdall" style="text-decoration: none; color: inherit;">Heimdall (Web UI Dashboard)</a></li>
+        <li><a href="#portainer" style="text-decoration: none; color: inherit;">Portainer (Container Management)</a></li>
+        <li><a href="#watchtower" style="text-decoration: none; color: inherit;">Watchtower (Auto Updates)</a></li>
+        <li><a href="#caddy" style="text-decoration: none; color: inherit;">Caddy (Reverse Proxy with HTTPS)</a></li>
+        <li><a href="#netdata" style="text-decoration: none; color: inherit;">Netdata (Monitoring)</a></li>
+        <li><a href="#samba" style="text-decoration: none; color: inherit;">Samba (File Sharing)</a></li>
+        <li><a href="#wireguard" style="text-decoration: none; color: inherit;">Wireguard VPN</a></li>
+        <li><a href="#ddns" style="text-decoration: none; color: inherit;">DDNS (DuckDNS + NoIP)</a></li>
+      </ul>
+    
+      <h3>Screenshots</h3>
+      <!-- Put correct screenshots, host assets on Netlify eventually-->
+      <div class="projects">
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\physical-1.webp" alt="physical-1">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\physical-2.webp" alt="physical-2">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\ssh.webp" alt="ssh">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\sudo-crontab.webp" alt="sudo-crontab">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\crontab.webp" alt="crontab">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\os-backup.webp" alt="os-backup">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\log-cleanup.webp" alt="log-cleanup">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\minecraft-backup.webp" alt="minecraft-backup">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\clear-cache.webp" alt="clear-cache">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\monthly-updates.webp" alt="monthly-updates">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\nvme-usb-Healthcheck.webp" alt="nvme-usb-Healthcheck">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\docker-weekly-maintenance.webp" alt="docker-weekly-maintenance">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\docker-daily-maintenance.webp" alt="docker-daily-maintenance">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\jellyfin-homepage.webp" alt="jellyfin-homepage">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\jellyfin-users.webp" alt="jellyfin-users">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\jellyfin-plugin.webp" alt="jellyfin-plugin">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\jellyfin-encoding.webp" alt="jellyfin-encoding">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\jellyfin-login.webp" alt="jellyfin-login">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\jellyfin-media.webp" alt="jellyfin-media">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\daily-restart.webp" alt="daily-restart">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\caddy-file.webp" alt="caddy-file">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\portainer-dashboard.webp" alt="portainer-dashboard">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\portainer-containers.webp" alt="portainer-containers">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\portainer-stack.webp" alt="portainer-stack">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\portainer-images.webp" alt="portainer-images">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\heimdal.webp" alt="heimdal">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\netdata.webp" alt="netdata">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\samba.webp" alt="samba">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\samba-nvmeroot-files.webp" alt="samba-nvmeroot-files">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\samba-share-files.webp" alt="samba-share-files">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\ai-chat.webp" alt="ai-chat">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\ai-chat-files.webp" alt="ai-chat-files">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\ai-chat-login.webp" alt="ai-chat-login">
+        </div>
+        <div class="project-card">
+          <img loading="lazy" src="assets\project1\images\webp\ai-html.webp" alt="ai-html">
+        </div>
+      </div>
+
+
+      <h3>Timeline</h3>
+      <p>
+        <strong>Hour 0-40:</strong>Trial and error, fix NVME not being recognised, decide on 
+        to use raspberry pi OS lite 64bit Unable to figure out how to get the OS to stop 
+        breaking and refusing to SSH. I decided to instead have the OS on the USB stick and 
+        the NVME for everything else including cache and  logs to drastically increase the 
+        USB's lifespan.
+      </p>
+      <p>
+        <strong>Hour 40-54:</strong>Installed pi OS lite 64bit on USB and moved as much of the 
+        OS to the NVME to ensure the least amount of wear on the USB. Added automated 
+        maintenance scripts to monitor wear on USB and NVME and so I don't have to manually 
+        update my services, auto USB backups at Off Peak times, added 1GB swap to NVME with 
+        very low swap to ensure that the pi server doesn't just crash when under extremely 
+        heavy loads. Setup Docker, Wireguard VPN (PiVPN) and Samba.
+      </p>
+      <p>
+        <strong>Hour 54+:</strong>Built an AI with web access, password protected, Processing 
+        films for Jellyfin on a windows pc via FFMPEG (scripts optimized for Nvidia GPUS with 
+        support for NVENC + Vulkan for best efficiency). Optimized the maintenance scripts to 
+        not overlap and cause crashes or corruption of the Pi server. Surprisingly discovered 
+        the USB stick that I found was from 2013 and still had no bad blocks or issues and was 
+        basically brand new condition.
+      </p>
+
+
+      <h3>Challenges</h3>
+      <ul>
+          <li>Getting the NVME to be recognised and stable by Pi OS lite</li>
+          <li>Correctly applying thermal pads and ribbon cable angle</li>
+          <li>Losing original Docker Compose and .yml file, and now being unable to edit the stack as a whole</li>
+          <li>Balancing RAM limits for services</li>
+          <li>Network setup for Wireguard VPN and DDNS</li>
+      </ul>
+      <h3>Learning</h3>
+      <ul>
+          <li>How to split OS between USB and NVME to greatly improve efficiency and reliability</li>
+          <li>Practical Docker usage and service management with Portainer.</li>
+          <li>Losing original Docker Compose and .yml file, and now being unable to edit the stack as a whole</li>
+          <li>Balancing RAM limits for services</li>
+          <li>Performing day-day maintenance when needed</li>
+          <li>Configuring reverse proxy (Caddy) with https for multiple services</li>
+          <li>Automate updates and backups with watchtower and custom scripts (Ai made but problem-solving myself)</li>
+      </ul>
+
+      <h3>Services -Explaination</h3>
+      <p id="jellyfin">
+        <strong>Jellyfin (Media server):</strong> Media server for films, enabling easier access abroad. I added 
+        multiple plugins for metadata, subtitles, and automatic stopping of transcoding once a session ends, 
+        improving usability and performance. The server uses <a href="#ddns" style="text-decoration: none; color: inherit;"><strong>no-IP DDNS</strong></a> for reliable stability 
+        and uptime. It runs in a Docker container, making updates automated through <a href="#watchtower" style="text-decoration: none; color: inherit;"><strong>Watchtower</strong></a>.
+        The scripts used for encoding and replacing audio are stored in <a href="https://github.com/aires-sil/Aires-Portfolio/tree/d4ad6c616146a0269759a619271dfde5648e2f90/assets/project1/files/jellyfin" style="text-decoration: none; color: #003333;">
+        github</a>.
+        Added live TV access for Jellyfin with free <a href="https://github.com/LITUATUI/M3UPT/tree/5ef3eedc84762a4bd4e16dc149fea1a114f7ef92" style="text-decoration: none; color: #003333;">
+        Portuguese channels</a> via M3U Tuner, along with a few other free channels. <em>Note: Live channels are currently under maintenance.</em>
+      </p>
+        <p id="minecraft-bedrock-server">
+        <strong>Minecraft Bedrock server:</strong>Deployed a self-managed Minecraft Bedrock 
+        server using Docker for easy updates and container isolation. Implemented automated 
+        daily backups to ensure data integrity, and configured resource limits to maintain 
+        stability under load. The server uses NO-IP DDNS for reliable external access.
+      </p>
+        <p id="ai">
+        <strong>AI Chatbot (Docker + LLaMA.cpp):</strong>Developed a custom AI chatbot using Chat GPT 
+        for scripting and a custom API for web UI communication. Implemented a 
+        secret key and password protection, and deployed behind a Caddy reverse 
+        proxy with GZIP for secure HTTPS access. The model used was tinyllama-1.1b-chat-v0.3.Q4_K_M.gguf 
+        with 4-bit quantization to stay within memory limits. The scripts and code are stored in 
+        <a href="https://github.com/aires-sil/Aires-Portfolio/tree/d4ad6c616146a0269759a619271dfde5648e2f90/assets/project1/files/pi-ai" style="text-decoration: none; color: #003333;">
+        github</a>. <strong>This service has been archived as a learning project.</strong>
+      </p>
+        <p id="heimdall">
+        <strong>Heimdall (Web UI Dashboard):</strong>Application dashboard designed to organize, group 
+        and provide quick access to web applications and services from a single UI. I've chosen not to 
+        add SSO since I use Bitwarden and it would add unnecessary complications and potential 
+        security risks, knowing my luck. It runs a Docker container. It acts like a gateway to the 
+        rest of my applications for managing the Pi server and its services.
+      </p>
+        <p id="portainer">
+        <strong>Portainer (Container Management):</strong>Used to manage and monitor containers on the server, allowing me to restart, 
+        shutdown, or delete old images and containers. Its simple web UI helps keep the server organized. 
+        I made the mistake of creating the full stack before setting up Portainer, so I cannot manage the 
+        stack as a whole or edit it, and I lost the original .YML file. It has not been recreated yet and 
+        likely will not be for some time, as doing so could break the containers.
+      </p>
+        <p id="watchtower">
+        <strong>Watchtower (Auto Updates):</strong>A Docker container that 
+        automates maintenance by stopping containers, pulling updated images, removing old images, and 
+        restarting containers whenever a new version is available. This ensures my server stays up-to-date 
+        with minimal manual intervention.
+      </p>
+        <p id="caddy">
+        <strong>Caddy (Reverse Proxy with HTTPS):</strong>Handles HTTPS access for my Jellyfin media server, 
+        <a href="https://itstudy.duckdns.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;  color: #003333;">Troll site</a>, 
+        AI chatbot, and this portfolio site, as well as any future services. 
+        It ensures secure connections and simplifies management of multiple web services.
+      </p>
+        <p id="netdata">
+        <strong>Netdata (Monitoring):</strong>Monitors system resource usage to ensure efficient operation. 
+        It provides detailed metrics on CPU, RAM, and container usage, helping to identify and prevent 
+        resource bottlenecks.
+      </p>
+        <p id="samba">
+        <strong>Samba (File Sharing):</strong>I chose Samba for its 
+        lightweight and easy-to-use setup. An additional layer of security requires a username and password, 
+        protecting the home network from unauthorized access. It is used for transferring files from my PC, 
+        editing Docker container configurations, and updating hosted webpages, including the AI web UI.
+      </p>
+        <p id="wireguard">
+        <strong>Wireguard VPN:</strong>I set up a Wireguard VPN using PiVPN for easier initial configuration and ongoing management. 
+        UDP port 51820 was port-forwarded to allow external access, and a DDNS service was used on the endpoint to handle dynamic public IPs. 
+        This setup provides secure home access to services that do not have dedicated DDNS or port forwarding configured.
+      </p>
+        <p id="ddns">
+        <strong>DDNS (DuckDNS + NoIP):</strong>I use DuckDNS for non-essential services such as my 
+        troll site and portfolio site, with a script that checks every 5 minutes for changes to my 
+        public IP. For essential services like Wireguard, as well as Jellyfin and the Minecraft 
+        Bedrock server, I use NO-IP. I chose NO-IP for its robust performance, reliability, and 
+        anycast network. The only limitation is that the free tier provides one hostname, but 
+        additional hostnames are inexpensive (£2.99/month for 3) and fully support automated dynamic updates.
+      </p>
+
+        <!-- BACK TO TOP -->
+        <p><a href="#top" style="text-decoration: none;  color: #003333;">← Back to top</a></p>
+
+   </section>
+
+
+   <!-- CONTACT SECTION -->
+   <section id="contact">
+      <h2>Contact Me</h2>
+
+      <div class="contact">
+         <div class="contact-card">
+            <h3>Email</h3>
+            <p>arests2000@gmail.com</p>
+         </div>
+
+         <div class="contact-card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/aires-sil" target="_blank">Visit My GitHub</a></p>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- FOOTER -->
+   <footer>
+      © 2025 Aires. All Rights Reserved
+   </footer>
+
+</body>
+</html>

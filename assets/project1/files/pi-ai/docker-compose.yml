@@ -1,0 +1,25 @@
+services:
+  tinyllama_ai:
+    build:
+      context: /mnt/nvme/ai  # Folder where your Dockerfile lives
+      dockerfile: Dockerfile
+    container_name: tinyllama_ai
+    restart: always
+    environment:
+      WIKI_API_KEY: ${WIKI_API_KEY}
+      WEB_API_KEY: ${WEB_API_KEY}
+      SECRET_KEY: ${SECRET_KEY}      # make sure this is in your .env
+      USERS: ${USERS}                # make sure this is in your .env
+    ports:
+      - "5000:5000"
+    volumes:
+      - /mnt/nvme/ai/models:/app/models
+      - /mnt/nvme/ai/ai_data:/app/ai_data
+      - /mnt/nvme/ai/scripts:/app/scripts
+      - /mnt/nvme/ai/logs:/app/logs
+      - /mnt/nvme/ai/cache:/app/cache
+      - /mnt/nvme/ai/config:/app/config
+      - /mnt/nvme/ai/templates:/app/templates
+      - /mnt/nvme/ai/static:/app/static
+      - /mnt/nvme/ai/.env:/app/.env
+    command: ["./scripts/start_all.sh"]

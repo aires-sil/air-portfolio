@@ -1,0 +1,7 @@
+ffmpeg -i "input.mkv" -map 0:a:2 -c:a copy "audio.mka"
+
+
+ffmpeg -i "video.mkv" -i audio.mka -c:v copy -map 0:v:0 -map 1:a:0 -shortest "output.mkv"
+
+
+cd "C:\Users\\Desktop\MOVIES\RAW"
