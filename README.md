@@ -25,8 +25,11 @@ Inline and external CSS usage.
 
 Can be hosted via GitHub Pages, Netlify, or a personal server.
 
-To run locally: clone the repository and open index.html in a browser.
-There is a template for the html in assets/templates
+    1. Clone the repository.  
+    2. Open `index.html` in any web browser.  
+    3. The main HTML template is located under `assets/templates`.  
+    4. Make sure the `style.css` file is in the same folder as `index.html` (or any linked project pages).  
+    5. `index.html` includes redirects to other `.html` files for individual projects.  
 
 5. Status
 
